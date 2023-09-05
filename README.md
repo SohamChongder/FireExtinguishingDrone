@@ -124,6 +124,5 @@ While the fire-fighting drone subsystem offers significant advantages in firefig
 
 ## Conclusion
 The fire-fighting drone subsystem represents a significant advancement in emergency response technology. It offers the potential to improve response times, enhance safety for firefighters, and increase the effectiveness of firefighting operations. The integration of automatic controls, modularity, and the use of YOLO for fire detection are key features that enhance the system's effectiveness.
+You can also find the working video of the drone at the [Link](workingvdo.mp4)
 
-## Working Video
-![Fire-Fighting Drone Subsystem CAD Model](cadimg3.png)
