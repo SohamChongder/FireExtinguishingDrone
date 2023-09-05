@@ -1,6 +1,6 @@
 # Fire-Fighting Drone Subsystem
 
-![Fire-Fighting Drone Subsystem CAD Model](droneimg1.png)
+![Fire-Fighting Drone Subsystem CAD Model](Final_assembly_drone.stl)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -84,6 +84,8 @@ The subsystem is configured to operate autonomously with minimal human intervent
 The detailed design of the subsystem includes the selection of high-quality components, such as the diaphragm pump, tank, and conduit. The diaphragm pump operates at a pressure of 220 PSI and a flow rate of 10 liters per minute, ensuring efficient foam delivery. The 10-liter tank provides an ample supply of foam for firefighting operations.
 
 The conduit is made of durable PVC material, ensuring longevity and resistance to wear and tear. The nozzle is designed to provide an adjustable spray pattern, allowing for effective coverage of the fire. The onboard camera is integrated with YOLO object detection technology, enabling real-time fire detection and location.
+
+A detailed 3d model is available in the [CAD model](Final_assembly_drone.stl)
 
 ## Fabrication and Assembly
 
