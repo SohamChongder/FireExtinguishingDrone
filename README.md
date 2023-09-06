@@ -88,8 +88,7 @@ Here is a list of materials required for the fabrication of the fire-fighting dr
 
 ### Drawings and CAD Model
 ![Fire-Fighting Drone Subsystem CAD Model](cadimg1.png)
-![Fire-Fighting Drone Subsystem CAD Model](cadimg2.png)
-![Fire-Fighting Drone Subsystem CAD Model](cadimg3.png)
+
 
 ## Limitations and Challenges
 While the fire-fighting drone subsystem offers significant advantages in firefighting operations, there are limitations and challenges to consider. These include:
