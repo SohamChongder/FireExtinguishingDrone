@@ -1,14 +1,14 @@
 # Fire-Fighting Drone Subsystem
 
-![Fire-Fighting Drone Subsystem CAD Model](Final_assembly_drone.stl)
+![Fire-Fighting Drone Subsystem CAD Model](droneimg.jpg)
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Market Research](#market-research)
 - [Conceptual Design](#conceptual-design)
 - [Embodiment and Detailed Design](#embodiment-and-detailed-design)
-- [Fabrication and Assembly](#fabrication-and-assembly)
-- [Conclusion](#conclusion)
+- [Cost of the Project](#bill-of-materials)
+- [Limitations and Challenges](#limitations-and-challenges)
 
 ## Introduction
 
@@ -26,8 +26,6 @@ Beneficiaries from the fire extinguishing drone are:
 - Firefighters who have difficulty in entering the above floors of high-rise buildings.
 - MNC’s which can use drones in case of fire emergency in high-rise buildings.
 
-### Organization of this Report
-The report is organized in such a way that it gives you a clear picture of how we will develop this subsystem.
 
 ## Market Research
 
@@ -54,7 +52,7 @@ Addressing these challenges will be critical in developing more effective fire e
 ### Ideation
 Initially, we decided to create a drone that has the capabilities to extinguish fires. Our goal was to maximize the range and variety of fires extinguished while using the most efficient material to do so in the process. We enlisted all types of extinguishing materials and also the types of nozzles, pipes, etc. We wrote code for the optimization function. We then decided to integrate a camera into our subsystem. After seriously considering the various agents that we can use for extinguishing fire, we find foam to be the most suitable one. Along with this, we decided to conserve the material by automating it to stop and start depending on the presence of fire. The switching mechanism was also of PWM type integrated within the pump, so it could be used later on to control the flow. We finalized on a 220 PSI, 10L/min diaphragm pump to spray out our foam and a conduit of 1.3m of PVC and also a tank of 10L capacity.
 
-#### Types of Fires
+#### Types of Extinguishing Agents
 | SL No | Element               | Density         | Types of fire | Limitations                                     | Advantages                                          |
 |-------|-----------------------|-----------------|---------------|-------------------------------------------------|-----------------------------------------------------|
 | 1     | Water                 | 1 kg/m³         | A             | - Add Anti - freezing additives (KCl, MgCl, etc.) - Corrosion inhibiting additives (alkyl phosphate, alkyl carbonate, sodium silicate, potassium chromate, etc.) - Bactericide additives (sodium azide, ethylene glycol, etc.) - Discharge additives (potassium manganate, etc.) - Etc. | - High-heat capacity - Available in most situations |
@@ -67,62 +65,40 @@ Initially, we decided to create a drone that has the capabilities to extinguish 
 
 ### Embodiment and Detailed Design
 
-#### Product Architecture
 The fire-fighting drone subsystem consists of several key components, each serving a specific purpose in extinguishing fires. These components include:
 - Diaphragm Pump: The diaphragm pump is responsible for pumping the fire-extinguishing foam from the tank to the nozzle, providing the necessary pressure and flow rate for effective firefighting.
 - Tank: The tank stores the fire-extinguishing foam. It has a capacity of 10 liters, providing an ample supply of foam for firefighting operations.
 - Conduit: A 1.3-meter PVC conduit connects the tank to the nozzle, allowing the foam to travel from the tank to the nozzle.
 - Nozzle: The nozzle is responsible for spraying the fire-extinguishing foam onto the fire. It has an adjustable spray pattern to ensure effective coverage.
-
-#### System Level Design
+- YOLO based AI detection: YOLO based [code](osyolo2.py) was used to detect fire from the onboard camera and aid the operator to align the drone so as to get maximum extinguishing effect from the ejecting foam.It also sends a signal to turn off the pumps when they are not optimally aligned . This is done to save energy.
+- Arduino : The Arduino board powered by its [code](ArduinoCode.ino) acts as an interface between the YOLO code and the pumps. Based on the signal from the onboard computer, it decides the type of PWM signals to be transferred to the pump to either turn it on or off .
 The fire-fighting drone subsystem is designed to be modular and easily integrated into existing firefighting drone platforms. It can be attached to the drone's payload bay, allowing for quick deployment and removal as needed. The system is powered by the drone's onboard battery, ensuring a stable power supply during firefighting operations.
-
-#### Design Configuration
-The subsystem is configured to operate autonomously with minimal human intervention. The onboard camera is equipped with YOLO (You Only Look Once) object detection technology, which can identify and locate fires in real-time. When a fire is detected, the subsystem activates the diaphragm pump to spray the fire-extinguishing foam onto the fire. The pump's flow rate is controlled by a PWM (Pulse Width Modulation) signal, allowing for precise control of the foam output.
-
-#### Detailed Design
-The detailed design of the subsystem includes the selection of high-quality components, such as the diaphragm pump, tank, and conduit. The diaphragm pump operates at a pressure of 220 PSI and a flow rate of 10 liters per minute, ensuring efficient foam delivery. The 10-liter tank provides an ample supply of foam for firefighting operations.
-
-The conduit is made of durable PVC material, ensuring longevity and resistance to wear and tear. The nozzle is designed to provide an adjustable spray pattern, allowing for effective coverage of the fire. The onboard camera is integrated with YOLO object detection technology, enabling real-time fire detection and location.
 
 A detailed 3d model is available in the [CAD model](Final_assembly_drone.stl)
 
-## Fabrication and Assembly
-
-### Bill of Materials
+## Bill of Materials
 Here is a list of materials required for the fabrication of the fire-fighting drone subsystem:
-- Diaphragm Pump (220 PSI, 10L/min)
-- Tank (10 liters capacity)
-- PVC Conduit (1.3 meters)
-- Nozzle (Adjustable spray pattern)
-- Camera with YOLO object detection
-- Drone payload bay attachment hardware
-- Wiring and connectors
-- Mounting brackets
-- Control electronics (PWM controller)
-- Foam fire extinguishing agent
+| SL No | Material             | Cost (Rs) |
+|-------|----------------------|-----------|
+| 1     | Diaphragm Pump       | Rs1,249   |
+| 2     | Tank                 | Rs18,500  |
+| 3     | PVC pipe (5m)        | Rs230     |
+| 4     | Nozzle               | Rs150     |
+| **Total** | **Cost**           | **Rs20,129** |
 
 ### Drawings and CAD Model
 ![Fire-Fighting Drone Subsystem CAD Model](cadimg1.png)
 ![Fire-Fighting Drone Subsystem CAD Model](cadimg2.png)
 ![Fire-Fighting Drone Subsystem CAD Model](cadimg3.png)
 
-### Manufacturing Process Description
-The fabrication process involves assembling the various components of the fire-fighting drone subsystem. This includes mounting the diaphragm pump, tank, and conduit to the drone's payload bay. The camera with YOLO object detection is integrated into the subsystem, and wiring and connectors are used to connect all components. Mounting brackets secure the components in place.
-
-The control electronics, including the PWM controller, are connected to the diaphragm pump to control the flow rate of the fire-extinguishing foam. The foam fire extinguishing agent is loaded into the tank, ready for deployment.
-
-### Assembly
-The assembly of the subsystem is straightforward and can be completed by trained personnel. The components are securely mounted to the drone's payload bay, and all wiring and connections are checked for proper functionality. Once assembled, the subsystem is ready for deployment in firefighting operations.
-
-### Limitations and Challenges
+## Limitations and Challenges
 While the fire-fighting drone subsystem offers significant advantages in firefighting operations, there are limitations and challenges to consider. These include:
 - Limited foam capacity: The 10-liter tank may have limitations in extinguishing large fires. Additional tank capacity or a tethered connection can be considered for extended firefighting operations.
 - Range and battery life: The subsystem's operation is dependent on the drone's battery life and communication range. Extending these capabilities may be necessary for remote or long-duration missions.
 - Weather conditions: Adverse weather conditions, such as high winds, can impact the effectiveness of foam delivery. Adjustments may be needed for precise targeting in challenging conditions.
 - Maintenance and refilling: Regular maintenance and refilling of the fire-extinguishing foam are essential to ensure readiness for firefighting operations.
 
-## Conclusion
-The fire-fighting drone subsystem represents a significant advancement in emergency response technology. It offers the potential to improve response times, enhance safety for firefighters, and increase the effectiveness of firefighting operations. The integration of automatic controls, modularity, and the use of YOLO for fire detection are key features that enhance the system's effectiveness.
-You can also find the working video of the drone at the [Link](workingvdo.mp4)
+For more info do check out [Detailed Report](DP_report.docx.pdf)
 
+## Contact
+- Soham Chongder: [Email](mailto:soham.chongder20@gmmail.com)
